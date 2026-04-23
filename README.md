@@ -30,7 +30,7 @@ strikebox-landing/
 ├── script.js           # Lógica de horarios y slider
 └── README.md           # Documentación
 
-## 👨‍💻 Autor
+# 👨‍💻 Autor
 
 Juan Villa Crisosto Desarrollador Full Stack y Estudiante de Ingeniería en Conectividad y Redes Concepción, Chile.
 ```
