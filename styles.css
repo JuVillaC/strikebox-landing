@@ -48,9 +48,26 @@ body {
 
 .highlight { color: var(--primary-orange); }
 
-/* --- Logo del Navbar --- */
+/* --- Navegación --- */
+.navbar {
+    background-color: rgba(10, 10, 10, 0.95);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
+}
+
+.flex-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
 .logo-img {
-    height: 65px; /* Altura ideal para que luzca la calavera */
+    height: 55px; /* Ajustado para que no ocupe tanto en móvil */
     display: block;
     transition: transform 0.3s ease;
 }
@@ -59,7 +76,43 @@ body {
     transform: scale(1.05);
 }
 
-/* Botones */
+/* Enlaces de Navegación (Desktop) */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover { color: var(--text-main); }
+
+/* Botón Hamburguesa (Oculto en Desktop) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    padding: 10px;
+}
+
+.menu-toggle .bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-main);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Botones Generales */
 .btn-primary, .btn-large {
     background-color: var(--primary-orange);
     color: white !important;
@@ -87,35 +140,8 @@ body {
     background-color: var(--primary-orange-hover);
 }
 
-/* Navegación */
-.navbar {
-    background-color: rgba(10, 10, 10, 0.95);
-    padding: 1rem 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #222;
-}
-
-.flex-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav a {
-    color: var(--text-muted);
-    text-decoration: none;
-    margin-left: 2rem;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-nav a:hover { color: var(--text-main); }
-
 /* ========================
-HERO & SLIDER
+   HERO & SLIDER
 ======================== */
 .hero {
     height: 100vh;
@@ -155,7 +181,7 @@ HERO & SLIDER
 
 .hero-content h1 {
     font-family: var(--font-agresiva);
-    font-size: clamp(3rem, 6vw, 6rem); 
+    font-size: clamp(2.5rem, 6vw, 6rem); 
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1.1;
@@ -166,7 +192,7 @@ HERO & SLIDER
 
 .hero-content p {
     color: #ffffff;
-    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-size: clamp(1.1rem, 2vw, 1.8rem);
     font-weight: 400;
     max-width: 800px;
     margin: 0 auto 2.5rem auto;
@@ -245,11 +271,47 @@ HERO & SLIDER
 .clase-row .hora { font-weight: bold; color: var(--primary-orange); }
 .clase-row .nombre { font-weight: 500; }
 
-/* Mobile Responsive */
+/* ========================
+   RESPONSIVE (MOBILE)
+   ======================== */
 @media (max-width: 768px) {
-    .hero-content h1 { font-size: 3rem; }
-    .logo-img { height: 35px; }
-    nav a { margin-left: 1rem; font-size: 0.8rem; }
+    .menu-toggle {
+        display: flex; /* Mostrar hamburguesa */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Escondido */
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(10, 10, 10, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.4s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0; /* Entra el menú */
+    }
+
+    .nav-links a {
+        margin: 1.5rem 0;
+        font-size: 1.8rem;
+        font-family: var(--font-agresiva);
+        text-transform: uppercase;
+    }
+
+    .logo-img { height: 45px; }
+
+    /* Animación X del botón */
+    .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    .hero-content h1 { font-size: 2.8rem; }
+    .section-title { font-size: 2.2rem; }
 }
 
 /* Planes y Precios */

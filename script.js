@@ -95,15 +95,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ==========================================
-    // LÓGICA DEL SLIDER DEL HERO (Fondo dinámico)
-    // ==========================================
-    const slides = document.querySelectorAll('.slider-bg');
-    let slideActual = 0;
+// LÓGICA DEL SLIDER DEL HERO (Fondo dinámico)
+// ==========================================
+const slides = document.querySelectorAll('.slider-bg');
+let slideActual = 0;
 
-    if(slides.length > 0) {
-        setInterval(() => {
-            slides[slideActual].classList.remove('active'); // Oculta la actual
-            slideActual = (slideActual + 1) % slides.length; // Pasa a la siguiente
-            slides[slideActual].classList.add('active'); // Muestra la nueva
-        }, 4000); // Cambia cada 4 segundos (4000 milisegundos)
-    }
+if(slides.length > 0) {
+    setInterval(() => {
+        slides[slideActual].classList.remove('active'); // Oculta la actual
+        slideActual = (slideActual + 1) % slides.length; // Pasa a la siguiente
+        slides[slideActual].classList.add('active'); // Muestra la nueva
+    }, 4000); // Cambia cada 4 segundos (4000 milisegundos)
+}
+
+// --- Lógica del Menú Hamburguesa ---
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.getElementById('nav-links');
+const links = document.querySelectorAll('.nav-links a');
+
+// Abrir/Cerrar menú
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
+// Cerrar menú automáticamente al hacer clic en un link (para ir a una sección)
+links.forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});

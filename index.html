@@ -17,11 +17,16 @@
         <header class="navbar">
             <div class="container flex-nav">
                 <div class="logo">
-                    <a href="#">
-                        <img src="assets/img/logo.png" alt="Strikebox Logo" class="logo-img">
-                    </a>
+                    <a href="#"><img src="assets/img/logo.png" alt="Strikebox" class="logo-img"></a>
                 </div>
-                <nav>
+
+                <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <nav class="nav-links" id="nav-links">
                     <a href="#disciplinas">Disciplinas</a>
                     <a href="#horarios">Horarios</a>
                     <a href="#planes">Planes</a>
