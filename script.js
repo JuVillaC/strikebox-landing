@@ -126,3 +126,24 @@ links.forEach(link => {
         navLinks.classList.remove('active');
     });
 });
+
+// ==========================================
+// LÓGICA DE PREGUNTAS FRECUENTES (Acordeón)
+// ==========================================
+const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+        const item = header.parentElement;
+            
+        // Cierra todos los demás (Opcional, si quieres que solo haya uno abierto)
+        document.querySelectorAll('.accordion-item').forEach(otherItem => {
+            if (otherItem !== item) {
+                otherItem.classList.remove('active');
+            }
+        });
+
+        // Abre o cierra el que clickeaste
+        item.classList.toggle('active');
+    });
+});
