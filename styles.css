@@ -690,3 +690,66 @@ UBICACIÓN Y MAPA
 .mapa-container iframe {
     display: block; /* Evita pequeños márgenes extraños debajo del iframe */
 }
+
+/* ========================
+   IMPLEMENTOS / EQUIPAMIENTO
+======================== */
+.implementos { 
+    padding: 6rem 0; 
+}
+
+.grid-implementos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card-implemento {
+    background-color: var(--bg-card);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    border: 1px solid #222;
+    border-top: 4px solid var(--primary-orange);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-implemento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(255, 77, 0, 0.15);
+}
+
+.card-implemento h3 {
+    font-family: var(--font-agresiva);
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-implemento ul {
+    list-style: none;
+}
+
+.card-implemento ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.card-implemento ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* El ticket (✓) personalizado */
+.card-implemento ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-orange);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
