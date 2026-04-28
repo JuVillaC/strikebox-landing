@@ -147,3 +147,24 @@ accordionHeaders.forEach(header => {
         item.classList.toggle('active');
     });
 });
+
+// ==========================================
+    // LÓGICA DE PESTAÑAS (TABS) PARA LOS PLANES
+    // ==========================================
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // 1. Quitar la clase 'active' de todos los botones y paneles
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabPanes.forEach(p => p.classList.remove('active'));
+
+            // 2. Agregar la clase 'active' al botón clickeado
+            btn.classList.add('active');
+
+            // 3. Mostrar el panel correspondiente
+            const targetId = btn.getAttribute('data-target');
+            document.getElementById(targetId).classList.add('active');
+        });
+    });

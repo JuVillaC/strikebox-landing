@@ -1,4 +1,6 @@
-/* Variables Globales - Identidad Naranja Strikebox */
+/* ========================
+   VARIABLES GLOBALES - Identidad Naranja Strikebox
+======================== */
 :root {
     --bg-dark: #0a0a0a;
     --bg-card: #141414;
@@ -11,7 +13,9 @@
     --font-cuerpo: 'Roboto', sans-serif;
 }
 
-/* Reseteo Básico */
+/* ========================
+   RESETEO BÁSICO
+======================== */
 * {
     margin: 0;
     padding: 0;
@@ -48,7 +52,9 @@ body {
 
 .highlight { color: var(--primary-orange); }
 
-/* --- Navegación --- */
+/* ========================
+   NAVEGACIÓN (NAVBAR)
+======================== */
 .navbar {
     background-color: rgba(10, 10, 10, 0.95);
     padding: 1rem 0;
@@ -65,13 +71,12 @@ body {
     align-items: center;
 }
 
-/* Logo */
 .logo {
-    flex: 1; /* Le da su propio espacio a la izquierda */
+    flex: 1;
 }
 
 .logo-img {
-    height: 55px; /* Ajustado para que no ocupe tanto en móvil */
+    height: 55px;
     display: block;
     transition: transform 0.3s ease;
 }
@@ -80,33 +85,30 @@ body {
     transform: scale(1.05);
 }
 
-/* Enlaces de Navegación (Desktop) */
 .nav-links {
-    flex: 3; /* Toma el espacio central */
+    flex: 3;
     display: flex;
-    justify-content: center; /* Centra los enlaces perfectamente */
+    justify-content: center;
     align-items: center;
-    gap: 1.8rem; /* Separación moderna entre enlaces */
+    gap: 1.8rem;
 }
 
 .nav-links a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.95rem; /* Un pelo más sutil para que no sature */
+    font-size: 0.95rem;
     font-weight: 500;
-    margin: 0; /* Quitamos márgenes viejos */
+    margin: 0;
     transition: color 0.3s ease;
-    white-space: nowrap; /* Evita que los textos largos se rompan */
+    white-space: nowrap;
 }
 
 .nav-links a:hover { color: var(--text-main); }
 
-/* El botón "Ver Planes" lo empujamos a la derecha */
 .nav-links a.btn-primary {
     margin-left: auto; 
 }
 
-/* Botón Hamburguesa (Oculto en Desktop) */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -126,7 +128,9 @@ body {
     border-radius: 2px;
 }
 
-/* Botones Generales */
+/* ========================
+   BOTONES GENERALES
+======================== */
 .btn-primary, .btn-large {
     background-color: var(--primary-orange);
     color: white !important;
@@ -213,7 +217,9 @@ body {
     text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.9);
 }
 
-/* Disciplinas */
+/* ========================
+   DISCIPLINAS
+======================== */
 .disciplinas { padding: 8rem 0; }
 
 .grid-disciplinas {
@@ -244,7 +250,9 @@ body {
 
 .card p { color: var(--text-muted); font-size: 1rem; }
 
-/* Horarios y Filtros */
+/* ========================
+   HORARIOS Y FILTROS
+======================== */
 .horarios { padding: 8rem 0; }
 
 .filtros { margin-bottom: 3rem; }
@@ -281,69 +289,140 @@ body {
 }
 
 .clase-row:last-child { border-bottom: none; }
-
 .clase-row .hora { font-weight: bold; color: var(--primary-orange); }
 .clase-row .nombre { font-weight: 500; }
+#mensaje-vacio { color: var(--primary-orange); }
 
 /* ========================
-RESPONSIVE (MOBILE)
-   ======================== */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex; /* Mostrar hamburguesa */
-    }
+   IMPLEMENTOS / EQUIPAMIENTO
+======================== */
+.implementos { padding: 6rem 0; }
 
-    /* Ajuste de altura del mapa para móviles */
-    .mapa-container iframe {
-        height: 300px; 
-    }
-
-    .nav-links {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(10, 10, 10, 0.98);
-        flex-direction: column;
-        justify-content: flex-start; /* Alinea desde arriba en vez del centro */
-        align-items: center;
-        padding-top: 100px; /* Deja espacio para el logo y la X */
-        padding-bottom: 40px; /* Espacio abajo por si hay que scrollear */
-        overflow-y: auto; /* Permite deslizar si la pantalla es muy chica */
-        transition: 0.4s ease-in-out;
-        z-index: 1000;
-    }
-
-    .nav-links.active {
-        right: 0; 
-    }
-
-    .nav-links a {
-        margin: 1rem 0; /* Reduje el margen un poco para que quepan mejor */
-        font-size: 1.4rem; /* Fuente apenas más chica para que "Preguntas Frecuentes" no se rompa */
-        font-family: var(--font-agresiva);
-        text-transform: uppercase;
-        text-align: center;
-    }
-
-    .nav-links a.btn-primary {
-        margin: 1rem 0; 
-    }
-
-    .logo-img { height: 45px; }
-
-    /* Animación X del botón */
-    .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
-
-    .hero-content h1 { font-size: 2.8rem; }
-    .section-title { font-size: 2.2rem; }
+.grid-implementos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
-/* Planes y Precios */
+.card-implemento {
+    background-color: var(--bg-card);
+    padding: 2.5rem 2rem;
+    border-radius: 8px;
+    border: 1px solid #222;
+    border-top: 4px solid var(--primary-orange);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-implemento:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(255, 77, 0, 0.15);
+}
+
+.card-implemento h3 {
+    font-family: var(--font-agresiva);
+    font-size: 1.5rem;
+    color: var(--text-main);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-implemento ul { list-style: none; }
+
+.card-implemento ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.card-implemento ul li:last-child { margin-bottom: 0; }
+
+.card-implemento ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-orange);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* ========================
+   PLANES Y PRECIOS (TABS)
+======================== */
 .planes { padding: 8rem 0; }
+
+.banner-clase-suelta {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    border: 1px solid var(--primary-orange);
+    border-radius: 8px;
+    padding: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    box-shadow: 0 4px 15px rgba(255, 77, 0, 0.1);
+}
+
+.banner-clase-suelta h3 {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.precio-suelta {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-orange);
+    font-family: var(--font-agresiva);
+}
+
+.tabs-planes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.tab-btn {
+    background-color: var(--bg-card);
+    color: var(--text-muted);
+    border: 2px solid #333;
+    padding: 0.8rem 2rem;
+    font-family: var(--font-agresiva);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    border-color: var(--primary-orange);
+    color: var(--text-main);
+}
+
+.tab-btn.active {
+    background-color: var(--primary-orange);
+    border-color: var(--primary-orange);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(255, 77, 0, 0.3);
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 .grid-planes {
     display: grid;
@@ -413,7 +492,6 @@ RESPONSIVE (MOBILE)
     background-color: var(--primary-orange);
 }
 
-/* El Plan Destacado */
 .destacado {
     border-color: var(--primary-orange);
     box-shadow: 0 0 20px rgba(255, 77, 0, 0.2);
@@ -422,7 +500,6 @@ RESPONSIVE (MOBILE)
 }
 
 .destacado:hover { transform: scale(1.05) translateY(-10px); }
-
 .destacado h3 { color: var(--primary-orange); }
 
 .badge {
@@ -439,15 +516,159 @@ RESPONSIVE (MOBILE)
     letter-spacing: 1px;
 }
 
-.text-muted { color: var(--text-muted); font-size: 0.9rem; }
+/* ========================
+   ¿QUIÉNES SOMOS?
+======================== */
+.quienes-somos { padding: 6rem 0 2rem; }
 
-/* Mensaje Domingo */
-#mensaje-vacio {
+.about-text p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.about-text strong { color: var(--text-main); }
+
+.about-text em {
     color: var(--primary-orange);
+    font-style: normal;
+    font-family: var(--font-agresiva);
+    letter-spacing: 1px;
 }
 
 /* ========================
-FOOTER Y CONTACTO
+   PREGUNTAS FRECUENTES (FAQ) Y ACORDEÓN
+======================== */
+.faq { padding: 6rem 0; }
+
+.accordion {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordion-item {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    border: 1px solid #222;
+    overflow: hidden;
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1.5rem;
+    background: none;
+    border: none;
+    text-align: left;
+    color: var(--text-main);
+    font-family: var(--font-cuerpo);
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover { background-color: #1a1a1a; }
+
+.accordion-header .icon {
+    font-size: 1.5rem;
+    color: var(--primary-orange);
+    transition: transform 0.3s ease;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background-color: #0d0d0d;
+}
+
+/* Aplica para Párrafos y Listas dentro del acordeón (Términos y condiciones) */
+.accordion-content p, .accordion-content ul {
+    padding: 0 1.5rem;
+    color: var(--text-muted);
+    margin: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.accordion-item.active .accordion-header .icon {
+    transform: rotate(45deg); /* Convierte el + en una x */
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px; /* Ampliado para cubrir listas largas */
+    padding: 0 0 1.5rem 0;
+}
+
+.accordion-item.active .accordion-content p,
+.accordion-item.active .accordion-content ul {
+    opacity: 1;
+}
+
+/* ========================
+   COMUNIDAD INSTAGRAM
+======================== */
+.comunidad { padding: 8rem 0; }
+
+.grid-instagram {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.grid-instagram iframe {
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    background-color: var(--bg-card);
+}
+
+/* ========================
+   UBICACIÓN Y MAPA
+======================== */
+.ubicacion { padding: 6rem 0; }
+
+.ubicacion-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.direccion-info {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+}
+
+.direccion-info strong {
+    color: var(--text-main);
+    font-size: 1.5rem;
+    font-family: var(--font-agresiva);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.mapa-container {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    border: 1px solid #222;
+}
+
+.mapa-container iframe { display: block; }
+
+/* ========================
+   FOOTER Y CONTACTO
 ======================== */
 .footer {
     background-color: #0d0d0d;
@@ -487,7 +708,6 @@ FOOTER Y CONTACTO
     flex-shrink: 0;
 }
 
-/* Redes Sociales */
 .social-links {
     display: flex;
     gap: 1.5rem;
@@ -516,9 +736,7 @@ FOOTER Y CONTACTO
     transform: translateY(-5px);
 }
 
-.social-links a:hover svg {
-    fill: white;
-}
+.social-links a:hover svg { fill: white; }
 
 .footer-bottom {
     text-align: center;
@@ -528,228 +746,53 @@ FOOTER Y CONTACTO
     font-size: 0.9rem;
 }
 
-/* COMUNIDAD INSTAGRAM */
-.comunidad {
-    padding: 8rem 0;
-}
-
-.grid-instagram {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    justify-items: center;
-}
-
-.grid-instagram iframe {
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    background-color: var(--bg-card);
-}
-
 /* ========================
-¿QUIÉNES SOMOS?
+   RESPONSIVE (MOBILE) - SIEMPRE AL FINAL
 ======================== */
-.quienes-somos {
-    padding: 6rem 0 2rem;
-}
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; 
+    }
 
-.about-text p {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-    max-width: 800px;
-    margin: 0 auto 1.5rem auto;
-}
+    .mapa-container iframe {
+        height: 300px; 
+    }
 
-.about-text strong {
-    color: var(--text-main);
-}
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(10, 10, 10, 0.98);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 100px;
+        padding-bottom: 40px;
+        overflow-y: auto;
+        transition: 0.4s ease-in-out;
+        z-index: 1000;
+    }
 
-.about-text em {
-    color: var(--primary-orange);
-    font-style: normal;
-    font-family: var(--font-agresiva);
-    letter-spacing: 1px;
-}
+    .nav-links.active { right: 0; }
 
-/* ========================
-PREGUNTAS FRECUENTES (FAQ)
-======================== */
-.faq {
-    padding: 6rem 0;
-}
+    .nav-links a {
+        margin: 1rem 0;
+        font-size: 1.4rem;
+        font-family: var(--font-agresiva);
+        text-transform: uppercase;
+        text-align: center;
+    }
 
-.accordion {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+    .nav-links a.btn-primary { margin: 1rem 0; }
 
-.accordion-item {
-    background-color: var(--bg-card);
-    border-radius: 8px;
-    border: 1px solid #222;
-    overflow: hidden;
-}
+    .logo-img { height: 45px; }
 
-.accordion-header {
-    width: 100%;
-    padding: 1.5rem;
-    background: none;
-    border: none;
-    text-align: left;
-    color: var(--text-main);
-    font-family: var(--font-cuerpo);
-    font-size: 1.1rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s ease;
-}
+    .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-.accordion-header:hover {
-    background-color: #1a1a1a;
-}
-
-.accordion-header .icon {
-    font-size: 1.5rem;
-    color: var(--primary-orange);
-    transition: transform 0.3s ease;
-}
-
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    background-color: #0d0d0d;
-}
-
-.accordion-content p {
-    padding: 0 1.5rem;
-    color: var(--text-muted);
-    margin: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-/* Clases activas controladas por JavaScript */
-.accordion-item.active .accordion-header .icon {
-    transform: rotate(45deg); /* Convierte el + en una x */
-}
-
-.accordion-item.active .accordion-content {
-    max-height: 200px; /* Suficiente espacio para el texto */
-    padding: 0 0 1.5rem 0;
-}
-
-.accordion-item.active .accordion-content p {
-    opacity: 1;
-}
-
-/* ========================
-UBICACIÓN Y MAPA
-======================== */
-.ubicacion {
-    padding: 6rem 0;
-}
-
-.ubicacion-content {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.direccion-info {
-    font-size: 1.2rem;
-    color: var(--text-muted);
-}
-
-.direccion-info strong {
-    color: var(--text-main);
-    font-size: 1.5rem;
-    font-family: var(--font-agresiva);
-    letter-spacing: 1px;
-    display: block;
-    margin-bottom: 0.5rem;
-}
-
-.mapa-container {
-    width: 100%;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    border: 1px solid #222;
-}
-
-/* El iframe del mapa ya está configurado al 100% de ancho en el HTML */
-.mapa-container iframe {
-    display: block; /* Evita pequeños márgenes extraños debajo del iframe */
-}
-
-/* ========================
-   IMPLEMENTOS / EQUIPAMIENTO
-======================== */
-.implementos { 
-    padding: 6rem 0; 
-}
-
-.grid-implementos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.card-implemento {
-    background-color: var(--bg-card);
-    padding: 2.5rem 2rem;
-    border-radius: 8px;
-    border: 1px solid #222;
-    border-top: 4px solid var(--primary-orange);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-implemento:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 20px rgba(255, 77, 0, 0.15);
-}
-
-.card-implemento h3 {
-    font-family: var(--font-agresiva);
-    font-size: 1.5rem;
-    color: var(--text-main);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.card-implemento ul {
-    list-style: none;
-}
-
-.card-implemento ul li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-}
-
-.card-implemento ul li:last-child {
-    margin-bottom: 0;
-}
-
-/* El ticket (✓) personalizado */
-.card-implemento ul li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--primary-orange);
-    font-weight: bold;
-    font-size: 1.1rem;
+    .hero-content h1 { font-size: 2.8rem; }
+    .section-title { font-size: 2.2rem; }
 }
