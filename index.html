@@ -65,27 +65,27 @@
         <section id="disciplinas" class="disciplinas container">
             <h2 class="text-center section-title">NUESTRAS DISCIPLINAS</h2>
             <div class="grid-disciplinas">
-                <div class="card">
+                <div class="card text-center">
                     <h3>Brazilian Jiu-Jitsu</h3>
                     <p>El arte suave. Técnica, palancas y control en el suelo.</p>
                 </div>
-                <div class="card card-mma">
+                <div class="card text-center">
                     <h3>MMA</h3>
                     <p>Artes Marciales Mixtas. Transición total de pie y suelo.</p>
                 </div>
-                <div class="card">
+                <div class="card text-center">
                     <h3>Kickboxing</h3>
                     <p>Potencia, striking y el mejor acondicionamiento físico.</p>
                 </div>
-                <div class="card">
+                <div class="card text-center">
                     <h3>Boxeo</h3>
                     <p>El arte de los puños. Mejora tu técnica, velocidad y defensa.</p>
                 </div>
                 
-                <div class="card" style="border-top-color: #3b82f6;"> <h3>BJJ Infancias</h3>
+                <div class="card text-center"> <h3>BJJ Infancias</h3>
                     <p>Iniciación al Jiu-Jitsu para niños. Disciplina, respeto y diversión segura.</p>
                 </div>
-                <div class="card" style="border-top-color: #3b82f6;">
+                <div class="card text-center">
                     <h3>Taekwondo Infancias</h3>
                     <p>Agilidad, patadas y formación integral para los más pequeños del dojo.</p>
                 </div>
@@ -197,11 +197,13 @@
         <section id="planes" class="planes container">
             <h2 class="text-center section-title">NUESTROS <span class="highlight">PLANES</span></h2>
 
+            <!-- Banner Clase Suelta -->
             <div class="banner-clase-suelta text-center">
                 <h3>🥋 Valor 1 Clase (Cualquier disciplina)</h3>
                 <p class="precio-suelta">$10.000</p>
             </div>
 
+            <!-- Botones de Pestañas (Tabs) -->
             <div class="tabs-planes">
                 <button class="tab-btn active" data-target="mensual">Mensual</button>
                 <button class="tab-btn" data-target="estudiante">Estudiante</button>
@@ -209,8 +211,9 @@
                 <button class="tab-btn" data-target="personalizada">Personalizadas</button>
             </div>
 
+            <!-- Contenedor de los Planes -->
             <div class="tabs-content">
-                
+                <!-- TRAYECTO: MENSUAL -->
                 <div class="tab-pane active" id="mensual">
                     <div class="grid-planes">
                         <div class="card-plan">
@@ -248,10 +251,11 @@
                     </div>
                 </div>
 
+                <!-- TRAYECTO: ESTUDIANTE -->
                 <div class="tab-pane" id="estudiante">
                     <div class="grid-planes">
                         <div class="card-plan">
-                            <h3>1 Disciplina</h3>
+                            <h3>1 Disciplina (Estudiante)</h3>
                             <div class="precio">$30.000<span>/mes</span></div>
                             <ul class="features-plan">
                                 <li>8 créditos</li>
@@ -259,7 +263,7 @@
                             <a href="https://api.whatsapp.com/send?phone=56965170154&text=Hola!%20Me%20interesa%20el%20Plan%20Estudiante%20de%201%20Disciplina." target="_blank" class="btn-plan">Elegir Plan</a>
                         </div>
                         <div class="card-plan">
-                            <h3>2 Disciplinas</h3>
+                            <h3>2 Disciplinas (Estudiante)</h3>
                             <div class="precio">$50.000<span>/mes</span></div>
                             <ul class="features-plan">
                                 <li>16 créditos</li>
@@ -269,6 +273,7 @@
                     </div>
                 </div>
 
+                <!-- TRAYECTO: ANUAL -->
                 <div class="tab-pane" id="anual">
                     <div class="grid-planes">
                         <div class="card-plan">
@@ -299,6 +304,7 @@
                     </div>
                 </div>
 
+                <!-- TRAYECTO: PERSONALIZADAS -->
                 <div class="tab-pane" id="personalizada">
                     <div class="grid-planes">
                         <div class="card-plan">
@@ -307,13 +313,13 @@
                             <ul class="features-plan">
                                 <li>Clase 1 a 1</li>
                             </ul>
-                            <a href="https://api.whatsapp.com/send?phone=56965170154&text=Hola!%20Me%20gustaría%20reservar%20una%20Clase%20Personalizada." target="_blank" class="btn-plan">Elegir Plan</a>
+                            <a href="https://api.whatsapp.com/send?phone=56965170154&text=Hola!%20Me%20interesa%20la%20Clase%20Personalizada%20de%201%20Clase." target="_blank" class="btn-plan">Elegir Plan</a>
                         </div>
                         <div class="card-plan">
                             <h3>8 Clases</h3>
                             <div class="precio">$100.000</div>
                             <ul class="features-plan">
-                                <li>Clase 1 a 1</li>
+                                <li>8 créditos</li>
                             </ul>
                             <a href="https://api.whatsapp.com/send?phone=56965170154&text=Hola!%20Me%20interesa%20el%20Pack%20de%208%20Clases%20Personalizadas." target="_blank" class="btn-plan">Elegir Plan</a>
                         </div>
@@ -321,14 +327,15 @@
                             <h3>12 Clases</h3>
                             <div class="precio">$150.000</div>
                             <ul class="features-plan">
-                                <li>Clase 1 a 1</li>
+                                <li>12 créditos</li>
                             </ul>
                             <a href="https://api.whatsapp.com/send?phone=56965170154&text=Hola!%20Me%20interesa%20el%20Pack%20de%2012%20Clases%20Personalizadas." target="_blank" class="btn-plan">Elegir Plan</a>
                         </div>
                     </div>
                 </div>
             </div>
-
+            <br><p>Al contratar cualquier plan, aceptas nuestros <em>Términos y Condiciones.</em></p>
+            <!-- TÉRMINOS Y CONDICIONES (Acordeón) -->
             <div class="terminos-container" style="margin-top: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                 <div class="accordion-item" style="border-color: var(--primary-orange);">
                     <button class="accordion-header" style="color: var(--primary-orange);">
@@ -339,7 +346,6 @@
                             <li>Cada crédito equivale a una clase.</li>
                             <li>No hay límite de clases por día.</li>
                             <li>No se realizan cambios ni devoluciones.</li>
-                            <li>Los planes de Estudiantes son de carácter mensual y requieren certificado de alumno regular.</li>
                             <li>Una vez terminado el plazo del plan, se eliminarán aquellos créditos que no fueron utilizados.</li>
                             <li>Precios no incluyen el costo de matrícula <strong>(Matrícula incluye polera Dri Fit)</strong>.</li>
                         </ul>
@@ -352,35 +358,31 @@
         <section id="implementos" class="implementos container">
             <h2 class="text-center section-title">EQUIPAMIENTO <span class="highlight">NECESARIO</span></h2>
             <div class="grid-implementos">
-                
                 <div class="card-implemento">
                     <h3>🥋 Brazilian Jiu-Jitsu</h3>
                     <ul>
-                        <li>Gi (Kimono) específico de BJJ</li>
+                        <li>Gi (Kimono) de BJJ</li>
                         <li>Cinturón correspondiente a tu grado</li>
                         <li>Rashguard para usar debajo o para No-Gi</li>
                     </ul>
                 </div>
-
                 <div class="card-implemento">
-                    <h3>🥊 Striking (Box / Kickboxing)</h3>
+                    <h3>🥊 Striking (Box / Kick)</h3>
                     <ul>
                         <li>Guantes de boxeo</li>
-                        <li>Vendas de protección</li>
+                        <li>Vendas de protección (mínimo 3 metros)</li>
                         <li>Protector bucal</li>
                         <li>Canilleras (para Kickboxing)</li>
                     </ul>
                 </div>
-
                 <div class="card-implemento">
                     <h3>🤼 MMA</h3>
                     <ul>
-                        <li>Guantillas de MMA (con acolchado)</li>
-                        <li>Ropa deportiva sin cierres ni bolsillos</li>
+                        <li>Guantillas de MMA con acolchado</li>
+                        <li>Short deportivo sin cierres ni bolsillos</li>
                         <li>Protector bucal y canilleras</li>
                     </ul>
                 </div>
-
             </div>
         </section>
 
@@ -464,16 +466,26 @@
                     </ul>
                 </div>
 
+                <!-- Columna de Horarios de Atención -->
                 <div class="footer-column">
-                    <h3 class="footer-title">HORARIOS DE ATENCIÓN</h3>
+                    <h3 class="footer-title">HORARIOS</h3>
                     <ul class="contact-info" style="list-style: none; padding: 0;">
                         <li>
+                            <!-- Ícono de Reloj -->
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
                             </svg>
-                            <span><strong>Lunes a Sábado:</strong><br>07:00 a 21:00 hrs</span>
+                            <span><strong>Lunes a Viernes:</strong><br>07:00 a 21:00 hrs</span>
                         </li>
                         <li>
+                            <!-- Ícono de Reloj (Sábado) -->
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                            </svg>
+                            <span><strong>Sábado:</strong><br>10:00 a 13:00 hrs</span>
+                        </li>
+                        <li>
+                            <!-- Ícono de Info/Cerrado -->
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
                             </svg>

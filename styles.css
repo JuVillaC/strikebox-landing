@@ -746,8 +746,9 @@ body {
     font-size: 0.9rem;
 }
 
+
 /* ========================
-   RESPONSIVE (MOBILE) - SIEMPRE AL FINAL
+RESPONSIVE (MOBILE) - SIEMPRE AL FINAL
 ======================== */
 @media (max-width: 768px) {
     .menu-toggle {
