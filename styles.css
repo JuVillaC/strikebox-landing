@@ -275,6 +275,57 @@ body {
     color: white;
 }
 
+/* FILTROS MÓVILES (Ocultos por defecto en escritorio) */
+.filtros-mobile {
+    display: none;
+}
+
+.select-filtro {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+    border: 2px solid #333;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-family: var(--font-cuerpo);
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 300px;
+    outline: none;
+    cursor: pointer;
+    /* Estilo de flecha naranja personalizada */
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF4D00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.2em;
+}
+
+.select-filtro:focus {
+    border-color: var(--primary-orange);
+}
+
+.select-filtro option {
+    background-color: var(--bg-card);
+    color: var(--text-main);
+}
+
+.filtro-mobile-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.filtro-mobile-group label {
+    font-family: var(--font-agresiva);
+    font-size: 1.2rem;
+    color: var(--primary-orange);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
 .tabla-horarios {
     background-color: var(--bg-card);
     border-radius: 8px;
@@ -631,7 +682,7 @@ body {
 }
 
 /* ========================
-   UBICACIÓN Y MAPA
+UBICACIÓN Y MAPA
 ======================== */
 .ubicacion { padding: 6rem 0; }
 
@@ -796,4 +847,16 @@ RESPONSIVE (MOBILE) - SIEMPRE AL FINAL
 
     .hero-content h1 { font-size: 2.8rem; }
     .section-title { font-size: 2.2rem; }
+
+    /* FILTROS RESPONSIVE */
+    .filtros-desktop {
+        display: none !important; /* Oculta los botones en móvil */
+    }
+    .filtros-mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
 }

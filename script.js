@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 1. LÓGICA DEL MENÚ HAMBURGUESA
     // ==========================================
-    // Buscamos por cualquiera de los dos IDs que pudimos haber usado
     const menuToggle = document.getElementById('mobile-menu') || document.getElementById('menu-toggle'); 
     const navLinks = document.getElementById('nav-links');
     
@@ -33,14 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
             header.addEventListener('click', () => {
                 const item = header.parentElement;
                 
-                // Cierra los demás acordeones abiertos
                 document.querySelectorAll('.accordion-item').forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.remove('active');
                     }
                 });
 
-                // Abre o cierra el que acabas de hacer clic
                 item.classList.toggle('active');
             });
         });
@@ -55,11 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (tabBtns.length > 0) {
         tabBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Quitar active de todos
                 tabBtns.forEach(b => b.classList.remove('active'));
                 tabPanes.forEach(p => p.classList.remove('active'));
 
-                // Poner active al clickeado
                 btn.classList.add('active');
                 const targetId = btn.getAttribute('data-target');
                 const targetPane = document.getElementById(targetId);
@@ -85,16 +80,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 5. FILTROS DE HORARIOS (Lógica protegida)
+    // 5. FILTROS DE HORARIOS (Desktop + Mobile)
     // ==========================================
     const tablaContainer = document.getElementById('tabla-horarios-container');
     
-    // Si usas tu HTML avanzado de horarios, entra aquí:
     if (tablaContainer) {
         const botonesDia = document.querySelectorAll('.filtros-dias .btn-filtro');
         const botonesDisciplina = document.querySelectorAll('.filtros-disciplinas .btn-filtro');
         const gruposDia = document.querySelectorAll('.dia-grupo');
         const mensajeVacio = document.getElementById('mensaje-vacio');
+        
+        // Elementos Select de Móvil
+        const selectDia = document.getElementById('select-dia');
+        const selectDisciplina = document.getElementById('select-disciplina');
 
         let diaActivo = new Date().getDay(); 
         let disciplinaActiva = 'todos';
@@ -146,33 +144,62 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // Inicializar Día (Sincroniza botones desktop y select móvil)
         if (diaActivo >= 1 && diaActivo <= 6) {
             const botonHoy = document.querySelector(`.filtros-dias .btn-filtro[data-dia="${diaActivo}"]`);
             if (botonHoy) botonHoy.classList.add('active');
+            if (selectDia) selectDia.value = diaActivo.toString();
         }
 
+        // Eventos para Botones Escritorio (Días)
         botonesDia.forEach(boton => {
             boton.addEventListener('click', () => {
                 document.querySelector('.filtros-dias .btn-filtro.active')?.classList.remove('active');
                 boton.classList.add('active');
                 diaActivo = parseInt(boton.getAttribute('data-dia'));
+                if (selectDia) selectDia.value = diaActivo.toString(); // Sincroniza móvil
                 aplicarFiltros();
             });
         });
 
+        // Eventos para Botones Escritorio (Disciplinas)
         botonesDisciplina.forEach(boton => {
             boton.addEventListener('click', () => {
                 document.querySelector('.filtros-disciplinas .btn-filtro.active')?.classList.remove('active');
                 boton.classList.add('active');
                 disciplinaActiva = boton.getAttribute('data-disciplina');
+                if (selectDisciplina) selectDisciplina.value = disciplinaActiva; // Sincroniza móvil
                 aplicarFiltros();
             });
         });
 
+        // Eventos para Select Móvil (Días)
+        if (selectDia) {
+            selectDia.addEventListener('change', (e) => {
+                diaActivo = parseInt(e.target.value);
+                document.querySelector('.filtros-dias .btn-filtro.active')?.classList.remove('active');
+                const botonSync = document.querySelector(`.filtros-dias .btn-filtro[data-dia="${diaActivo}"]`);
+                if (botonSync) botonSync.classList.add('active'); // Sincroniza escritorio
+                aplicarFiltros();
+            });
+        }
+
+        // Eventos para Select Móvil (Disciplinas)
+        if (selectDisciplina) {
+            selectDisciplina.addEventListener('change', (e) => {
+                disciplinaActiva = e.target.value;
+                document.querySelector('.filtros-disciplinas .btn-filtro.active')?.classList.remove('active');
+                const botonSync = document.querySelector(`.filtros-disciplinas .btn-filtro[data-disciplina="${disciplinaActiva}"]`);
+                if (botonSync) botonSync.classList.add('active'); // Sincroniza escritorio
+                aplicarFiltros();
+            });
+        }
+
+        // Ejecutar primer filtro
         aplicarFiltros();
         
     } else {
-        // Lógica de respaldo si usas el HTML básico de horarios
+        // Lógica de respaldo si usas HTML básico (Sin grupos)
         const btnFiltrosBasico = document.querySelectorAll('.filtros .btn-filtro');
         const claseRows = document.querySelectorAll('.clase-row');
         const msjVacioBasico = document.getElementById('mensaje-vacio');

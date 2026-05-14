@@ -47,7 +47,7 @@
             <div class="container hero-content text-center">
                 <h1>SUPERA TUS LÍMITES EN <span class="highlight">CONCEPCIÓN</span></h1>
                 <p>Entrena Boxeo, Kickboxing, Brazilian Jiu-Jitsu y Artes Marciales Mixtas en el mejor ambiente.</p>
-                <a href="https://api.whatsapp.com/send?phone=56965170154&text=Hola!%20Me%20gustaría%20obtener%20más%20información." target="_blank" class="btn-large">CONTÁCTANOS</a>
+                <a href="https://api.whatsapp.com/send?phone=56965170154&text=Hola!%20Me%20gustaría%20obtener%20más%20información." target="_blank" class="btn-large">COMIENZA EL CAMBIO</a>
             </div>
         </main>
 
@@ -91,31 +91,62 @@
                 </div>
             </div>
         </section>
+
         <section id="horarios" class="horarios container">
             <h2 class="text-center section-title">HORARIOS</h2>
+
+            <div class="filtros-mobile">
+                <div class="filtro-mobile-group">
+                    <label for="select-dia">DÍA</label>
+                    <select id="select-dia" class="select-filtro">
+                        <option value="1">Lunes</option>
+                        <option value="2">Martes</option>
+                        <option value="3">Miércoles</option>
+                        <option value="4">Jueves</option>
+                        <option value="5">Viernes</option>
+                        <option value="6">Sábado</option>
+                    </select>
+                </div>
+                <div class="filtro-mobile-group">
+                    <label for="select-disciplina">DISCIPLINAS</label>
+                    <select id="select-disciplina" class="select-filtro">
+                        <option value="todos">Todos</option>
+                        <option value="bjj">BJJ</option>
+                        <option value="bjj-infancias">BJJ Inf.</option>
+                        <option value="bjj-femenino">BJJ Femenino</option>
+                        <option value="mma">MMA</option>
+                        <option value="kickboxing">Kickboxing</option>
+                        <option value="kickboxing-femenino">Kickboxing Femenino</option>
+                        <option value="boxeo">Boxeo</option>
+                        <option value="taekwondo-infancias">TKD Inf.</option>
+                    </select>
+                </div>
+            </div>
             
-            <div class="filtros text-center filtros-dias" style="margin-bottom: 1rem;">
-                <button class="btn-filtro" data-dia="1">L</button>
-                <button class="btn-filtro" data-dia="2">M</button>
-                <button class="btn-filtro" data-dia="3">X</button>
-                <button class="btn-filtro" data-dia="4">J</button>
-                <button class="btn-filtro" data-dia="5">V</button>
-                <button class="btn-filtro" data-dia="6">S</button>
+            <div class="filtros-desktop">
+                <div class="filtros text-center filtros-dias" style="margin-bottom: 1rem;">
+                    <button class="btn-filtro" data-dia="1">Lunes</button>
+                    <button class="btn-filtro" data-dia="2">Martes</button>
+                    <button class="btn-filtro" data-dia="3">Miércoles</button>
+                    <button class="btn-filtro" data-dia="4">Jueves</button>
+                    <button class="btn-filtro" data-dia="5">Viernes</button>
+                    <button class="btn-filtro" data-dia="6">Sábado</button>
+                </div>
+
+                <div class="filtros text-center filtros-disciplinas">
+                    <button class="btn-filtro active" data-disciplina="todos">Todas</button>
+                    <button class="btn-filtro" data-disciplina="bjj">BJJ</button>
+                    <button class="btn-filtro" data-disciplina="bjj-infancias">BJJ Inf.</button>
+                    <button class="btn-filtro" data-disciplina="bjj-femenino">BJJ Femenino</button>
+                    <button class="btn-filtro" data-disciplina="mma">MMA</button>
+                    <button class="btn-filtro" data-disciplina="kickboxing">Kickboxing</button>
+                    <button class="btn-filtro" data-disciplina="kickboxing-femenino">Kickboxing Femenino</button>
+                    <button class="btn-filtro" data-disciplina="boxeo">Boxeo</button>
+                    <button class="btn-filtro" data-disciplina="taekwondo-infancias">TKD Inf.</button>
+                </div>
             </div>
 
-            <div class="filtros text-center filtros-disciplinas">
-                <button class="btn-filtro active" data-disciplina="todos">Todos</button>
-                <button class="btn-filtro" data-disciplina="bjj">BJJ</button>
-                <button class="btn-filtro" data-disciplina="bjj-infancias">BJJ Inf.</button>
-                <button class="btn-filtro" data-disciplina="bjj-femenino">BJJ Femenino</button>
-                <button class="btn-filtro" data-disciplina="mma">MMA</button>
-                <button class="btn-filtro" data-disciplina="kickboxing">Kickboxing</button>
-                <button class="btn-filtro" data-disciplina="kickboxing-femenino">Kickboxing Femenino</button>
-                <button class="btn-filtro" data-disciplina="boxeo">Boxeo</button>
-                <button class="btn-filtro" data-disciplina="taekwondo-infancias">TKD Inf.</button>
-            </div>
-
-            <div id="mensaje-vacio" class="text-center" style="display: none; color: var(--primary-red); font-size: 1.2rem; font-weight: bold; margin: 3rem 0;">
+            <div id="mensaje-vacio" class="text-center" style="display: none; color: var(--primary-orange); font-size: 1.2rem; font-weight: bold; margin: 3rem 0;">
                 No existen horarios disponibles para este día.
             </div>
             
@@ -205,13 +236,11 @@
         <section id="planes" class="planes container">
             <h2 class="text-center section-title">NUESTROS <span class="highlight">PLANES</span></h2>
 
-            <!-- Banner Clase Suelta -->
             <div class="banner-clase-suelta text-center">
                 <h3>🥋 Valor 1 Clase (Cualquier disciplina)</h3>
                 <p class="precio-suelta">$10.000</p>
             </div>
 
-            <!-- Botones de Pestañas (Tabs) -->
             <div class="tabs-planes">
                 <button class="tab-btn active" data-target="mensual">Mensual</button>
                 <button class="tab-btn" data-target="estudiante">Estudiante</button>
@@ -219,9 +248,7 @@
                 <button class="tab-btn" data-target="personalizada">Personalizadas</button>
             </div>
 
-            <!-- Contenedor de los Planes -->
             <div class="tabs-content">
-                <!-- TRAYECTO: MENSUAL -->
                 <div class="tab-pane active" id="mensual">
                     <div class="grid-planes">
                         <div class="card-plan">
@@ -240,8 +267,9 @@
                             </ul>
                             <a href="https://api.whatsapp.com/send?phone=56965170154&text=Hola!%20Me%20interesa%20el%20Plan%20Mensual%20de%202%20Disciplinas." target="_blank" class="btn-plan">Elegir Plan</a>
                         </div>
-                        <div class="card-plan">
-                            <h3>Full Mensual (1 Disc.)</h3>
+                        <div class="card-plan destacado">
+                            <div class="badge">MÁS POPULAR</div>
+                            <h3>Full Mensual (1 Disciplina)</h3>
                             <div class="precio">$50.000<span>/mes</span></div>
                             <ul class="features-plan">
                                 <li>30 créditos</li>
@@ -249,7 +277,7 @@
                             <a href="https://api.whatsapp.com/send?phone=56965170154&text=Hola!%20Me%20interesa%20el%20Plan%20Full%20Mensual%20de%201%20Disciplina." target="_blank" class="btn-plan">Elegir Plan</a>
                         </div>
                         <div class="card-plan">
-                            <h3>Full Mensual (Todas)</h3>
+                            <h3>Full Mensual (Todas las Disciplinas)</h3>
                             <div class="precio">$100.000<span>/mes</span></div>
                             <ul class="features-plan">
                                 <li>30 créditos</li>
@@ -259,7 +287,6 @@
                     </div>
                 </div>
 
-                <!-- TRAYECTO: ESTUDIANTE -->
                 <div class="tab-pane" id="estudiante">
                     <div class="grid-planes">
                         <div class="card-plan">
@@ -281,7 +308,6 @@
                     </div>
                 </div>
 
-                <!-- TRAYECTO: ANUAL -->
                 <div class="tab-pane" id="anual">
                     <div class="grid-planes">
                         <div class="card-plan">
@@ -312,7 +338,6 @@
                     </div>
                 </div>
 
-                <!-- TRAYECTO: PERSONALIZADAS -->
                 <div class="tab-pane" id="personalizada">
                     <div class="grid-planes">
                         <div class="card-plan">
@@ -343,7 +368,6 @@
                 </div>
             </div>
             <br><p>Al contratar cualquier plan, aceptas nuestros <em>Términos y Condiciones.</em></p>
-            <!-- TÉRMINOS Y CONDICIONES (Acordeón) -->
             <div class="terminos-container" style="margin-top: 4rem; max-width: 800px; margin-left: auto; margin-right: auto;">
                 <div class="accordion-item" style="border-color: var(--primary-orange);">
                     <button class="accordion-header" style="color: var(--primary-orange);">
@@ -474,26 +498,22 @@
                     </ul>
                 </div>
 
-                <!-- Columna de Horarios de Atención -->
                 <div class="footer-column">
                     <h3 class="footer-title">HORARIOS</h3>
                     <ul class="contact-info" style="list-style: none; padding: 0;">
                         <li>
-                            <!-- Ícono de Reloj -->
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
                             </svg>
                             <span><strong>Lunes a Viernes:</strong><br>07:00 a 21:00 hrs</span>
                         </li>
                         <li>
-                            <!-- Ícono de Reloj (Sábado) -->
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
                             </svg>
                             <span><strong>Sábado:</strong><br>10:00 a 13:00 hrs</span>
                         </li>
                         <li>
-                            <!-- Ícono de Info/Cerrado -->
                             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
                             </svg>
@@ -516,7 +536,7 @@
                 
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Strikebox Concepción. Web desarrollada por Juan Villa Crisosto.</p>
+                <p>© 2026 Strikebox Concepción. Web desarrollada por Juan Villa Crisosto.</p>
             </div>
         </footer>
 
